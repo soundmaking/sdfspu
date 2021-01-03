@@ -46,8 +46,8 @@ def obsc_email(email_address):
     return ls[0][0:3] + '...@' + ls[1][0] + '...'
 
 
-# def path_is_url(path):
-#     """
-#     returns True when input (assumed string) starts either http:// Or https:/
-#     """
-#     return path[0:4] == 'http' and path[6] == '/'
+def path_is_url(path):
+    """
+    returns True when input (assumed string) starts either http:// Or https:/
+    """
+    return path[0:4] == 'http' and path[6] == '/'

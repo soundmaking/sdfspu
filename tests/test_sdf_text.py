@@ -1,4 +1,4 @@
-from sdfspu.sdf_text import randstring, split_name, obsc_email
+from sdfspu.sdf_text import randstring, split_name, obsc_email, path_is_url
 
 
 def test_randstring():
@@ -18,3 +18,8 @@ def test_split_name():
 
 def test_obsc_email():
     assert obsc_email('something@example.com') == 'som...@e...'
+
+
+def test_path_is_url():
+    assert path_is_url('https://github.com/soundmaking/sdfspu')
+    assert not path_is_url('/home/pi/gitclones/sdfspu/tests/test_sdf_text.py')
