@@ -49,6 +49,12 @@ class DataObject:
             err_msg = 'UnicodeDecodeError in read_csv()'
             print(err_msg)
             return False
+        except LookupError:
+            self.info['load_msg'] = 'Error Reading CSV: LookupError'
+            self.info['load_ok'] = False
+            err_msg = 'LookupError in read_csv()'
+            print(err_msg)
+            return False
 
         self.info['path_to_source'] = path_to_csv
         self.info['source_name'] = path_to_csv.rsplit('/', 1)[-1]
